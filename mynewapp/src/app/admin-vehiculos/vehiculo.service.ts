@@ -13,8 +13,8 @@ export class VehiculoService {
 
   constructor(private http: HttpClient) {}
   /**
-   *  Servicio que permite consultar la información del género
-   * @returns observable de lista con información del género
+   *  Servicio que permite consultar la información del vehículo
+   * @returns observable de lista con información del vehículo
    */
   public consultarVehiculos(): Observable<Array<Vehiculo>> {
     let url = environment.baseUrl+ConstantesVehiculo.URL_VEHICULOS;

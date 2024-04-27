@@ -17,8 +17,8 @@ export class VehiculoComponent implements OnInit {
   public urlBanner: string = '../../../assets/banner.jpg';
   public piePagina: string =
     'Contact us: +57 3102105253 - info@tusegundazo.com - @tusegundazo';
-    public labelMarca:string="Total marca";
-    public separador:string=":";
+  public labelMarca: string = 'Total marca';
+  public separador: string = ':';
 
   /**
    *
@@ -46,14 +46,17 @@ export class VehiculoComponent implements OnInit {
   private generarReporte(): void {
     const marcas = this.vehiculos.map((vehiculo) => vehiculo.marca);
 
-
     this.vehiculos.forEach((vehiculo) => {
       let reporte = this.reporteVehiculos.find(
         (rep) => rep.marca === vehiculo.marca
       );
       if (!!reporte) {
-          reporte.total += 1;
-          this.reporteVehiculos.splice(this.reporteVehiculos.indexOf(reporte), 1, reporte); 
+        reporte.total += 1;
+        this.reporteVehiculos.splice(
+          this.reporteVehiculos.indexOf(reporte),
+          1,
+          reporte
+        );
       } else {
         this.reporteVehiculos.push(new ReporteVehiculo(vehiculo.marca, 1));
       }
