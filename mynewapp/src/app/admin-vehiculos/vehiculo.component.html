@@ -27,4 +27,11 @@
       </table>
     </div>
   </div>
+  <div>
+    <ng-container *ngFor="let reporteVehiculo of reporteVehiculos; let i = index">
+      <p>{{labelMarca}}{{ reporteVehiculo.marca }}{{separador}}{{ reporteVehiculo.total }}</p>
+    </ng-container>    
+  </div>
+  <div class="col-5"><p class="text-end">{{ piePagina }}</p></div>
 </div>
+
